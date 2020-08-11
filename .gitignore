@@ -1,0 +1,7 @@
+*~
+*.log
+*.sw[a-z]
+*.DS_Store
+node_modules
+**/public
+**/views/index.hbs

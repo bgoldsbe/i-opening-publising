@@ -1,0 +1,68 @@
+@import '../../css/variables';
+
+$middle-base: ($header-height-base - 2) / 2;
+$middle-pos: $middle-base + px;
+$top-pos: ($middle-base - 8) + px;
+$bottom-pos: ($middle-base + 8) + px;
+
+.root {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1em;
+  height: $header-height;
+  width: $header-height;
+  background: $color-black;
+  transform: rotate(0deg);
+  transition: 150ms ease-in-out;
+  cursor: pointer;
+  flex-shrink: 0;
+  
+  span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 24px;
+    background: $color-white;
+    border-radius: 2px;
+    opacity: 1;
+    transform: rotate(0deg);
+    transition: 150ms ease-in-out;
+  }
+
+  span:nth-child(1) {
+    top: $top-pos;
+  }
+
+  span:nth-child(2),
+  span:nth-child(3) {
+    top: $middle-pos;
+  }
+
+  span:nth-child(4) {
+    top: $bottom-pos;
+  }
+}
+
+.open {
+  span:nth-child(1) {
+    top: $middle-pos;
+    width: 0%;
+    left: 50%;
+  }
+
+  span:nth-child(2) {
+    transform: rotate(45deg);
+  }
+
+  span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+
+  span:nth-child(4) {
+    top: $middle-pos;
+    width: 0%;
+    left: 50%;
+  }
+}

@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'verdana';
+  font-weight: 400;
+  font-size: 14px;
+  -webkit-text-size-adjust: none;
+}
+
+html, body, .app {
+  background-color: $no-content-background-color;
+  height: 100%;
+  min-width: $content-small;
+  color: $primary-font-color;
+}
+
+h1, h2, h3, h4, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  font-family: 'verdana', monospace;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 0.75em;
+  line-height: 1.5em;
+  
+  &:before {
+    content: "\f1b0"; 
+    font-size: .8em;
+    margin-right: 1em;
+    color: $color-pink;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $color-blue;
+}
+
+.link--external {
+  text-decoration: underline;
+}
+
+@media screen and (min-width: $content-width) {
+  a {
+    &:hover {
+      color: $color-pink;
+    }
+  }
+}

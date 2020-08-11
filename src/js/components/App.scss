@@ -1,0 +1,86 @@
+@import '../../css/variables';
+
+.root {
+  height: 100%;
+  position: relative;
+}
+
+.view {
+  background-color: $primary-background-color;
+  height: 100%;
+  left: 0;
+  position: relative;
+  transition: left 150ms ease-in-out;
+  position: relative;
+  padding-top: $gallery-height-base + $header-height-base + px;
+
+  &.standalone {
+    padding-top: 0;
+  }
+
+  &.pushed {
+    left: -($nav-width);
+  }
+}
+
+.content-wrapper {
+  width: 100%;
+  min-height: 100%;
+  background: $primary-background-color;
+  position: relative;
+}
+
+.content {
+  min-height: 100%;
+  max-width: $content-max;
+  margin: 0 auto;
+  padding: 1em 0;
+
+  h1 {
+    position: absolute;
+    top: -52px;
+    left: 10px;
+    font-size: 4em;
+    text-transform: uppercase;
+		color: $color-white;
+  }
+
+  h2 {
+    padding-bottom: 0.5em;
+  }
+  
+  h3 {
+    padding-bottom: 0.5em;
+  }
+
+  p {
+    padding-bottom: 1em;
+  }
+  
+  p.no-padding {
+    padding-bottom: 0;
+  }
+
+  ul {
+    padding-left: 1em;
+    padding-bottom: 1em;
+  }
+}
+
+@media screen and (min-width: $content-width) {
+  .view {
+    left: 0;
+    transition: none;
+    height: auto;
+    padding-top: $gallery-height-desktop-base + $header-height-base + px;
+
+    &.standalone {
+      padding-top: 0;
+    }
+    
+    &.pushed {
+      left: 0;
+    }
+  }
+}
+

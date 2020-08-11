@@ -1,0 +1,90 @@
+@import '../../css/variables';
+
+.root {
+  background: $navigation-secondary-background-color;
+  height: 100vh;
+  right: 0;
+  font-size: 0.9em;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  transform: translate3d(100%,0,0);
+  top: 0;
+  bottom: 0;
+  -webkit-overflow-scrolling: touch;
+  width: $nav-width;
+  font-family: 'Abel', sans-serif;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  
+  &.show {
+    transform: translate3d(0,0,0);
+  }
+}
+
+.group {
+  .active-group {
+    background-color: $navigation-active-group-color;
+  }
+}
+
+.item {
+  align-items: center;
+  color: $color-white;
+  cursor: pointer;
+  display: flex;
+  padding: 1em;
+  pointer-events: auto;
+  text-decoration: none;
+  position: relative;
+  
+  &.active-item {
+    background-color: $navigation-active-item-color;
+  } 
+}
+
+@media screen and (min-width: $content-width) {
+  .root {
+    width: auto;
+    padding: 0 1em 0 0.5em;
+    height: $header-height;
+    background: none;
+    display: flex;
+    transform: none;
+    position: relative;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    pointer-events: none;
+    overflow-x: inherit;
+    overflow-y: inherit;
+    
+    &.show {
+      transform: none;
+    }
+  }
+
+  .group {
+    .active-group {
+      background-color: transparent;
+    }
+  }
+  
+  .item {
+    height: $header-height;
+    padding: 0 1em;
+    
+    &:hover {
+      color: $navigation-active-color;
+    }
+
+    &.active-item {
+      background-color: $navigation-active-item-color;
+    
+      &:hover {
+        color: $color-white;
+      }
+    } 
+  }
+}
