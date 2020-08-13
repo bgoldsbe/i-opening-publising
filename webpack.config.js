@@ -15,6 +15,7 @@ const alias = ["components"].reduce((obj, pkg) => {
   obj[pkg] = path.resolve(__dirname, `./src/js/${pkg}`);
   return obj;
 }, {});
+alias.css = path.resolve(__dirname, "./src/css")
 
 const polyfills = [
   "core-js/stable",
@@ -36,7 +37,7 @@ module.exports = {
   module: {
     rules: [{
 			test: /\.js?$/,
-			exclude: /node_modules/,
+			exclude: /node_modules|\.scss/,
 			rules: [
 				{
 					loader: "babel-loader"
@@ -47,7 +48,7 @@ module.exports = {
       loader: "json"
     }, {
 			test: /\.scss$/,
-			exclude: path.resolve(__dirname, "./src/css/main.scss"),
+			exclude: path.resolve(__dirname, "css/main.scss"),
 			use: ExtractTextPlugin.extract({
 				use: [
 					{
@@ -79,7 +80,7 @@ module.exports = {
 			})
 		}, {
 			test: /\.scss$/,
-      exclude: path.resolve(__dirname, "./src/css/main.scss"),
+      exclude: path.resolve(__dirname, "css/main.scss"),
 			use: [{
 				loader: "css-loader",
 				options: {
@@ -127,7 +128,7 @@ module.exports = {
 		}),
     new WebpackManifestPlugin({fileName: "manifest.json"}),
 		new ExtractTextPlugin({
-			filename: "../css/main.css",
+      filename: "./src/css/main.css",
 			allChunks: true
 		}),
 		new OptimizeCSSAssetsPlugin({

@@ -56,6 +56,7 @@
     "postcss-loader": "^3.0.0",
     "postcss-nested": "^4.2.3",
     "postcss-scss": "^2.1.1",
+    "react-css-modules": "^4.7.11",
     "sass": "^1.26.10",
     "sass-loader": "^9.0.3",
     "scss-loader": "0.0.1",
