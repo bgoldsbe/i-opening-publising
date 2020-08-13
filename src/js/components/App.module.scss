@@ -3,10 +3,6 @@
 .root {
   height: 100%;
   position: relative;
-  background-image: url("/images/image-1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 }
 
 .view {
@@ -16,6 +12,10 @@
   transition: left 150ms ease-in-out;
   position: relative;
   padding-top: $header-height-base + px;
+  background-image: url("/images/image-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 
   &.pushed {
     left: -($nav-width);
@@ -71,7 +71,7 @@
   .view {
     left: 0;
     transition: none;
-    height: auto;
+    height: 100%;
     padding-top: $header-height-base + px;
 
     &.pushed {
