@@ -13,17 +13,11 @@ const startHttpAppServer = () => {
   const port = process.env.PORT || 9876;
   const server = http.createServer(app);
   
-  console.log("##########################");
-  console.log(process.env);
-  console.log(process.env.HTTP_PORT);
-  console.log(process.env.PORT);
-  console.log("##########################");
-
   startServer(server, port, `Listening (http) on ${port}\n`);
 };
 
 const startHttpsAppServer = () => {
-  const port = process.env.HTTPS_PORT || 9878;
+  const port = process.env.PORT || 9878;
 
   const options = {
     key: fs.readFileSync(`${process.env.CERT_DIR}/app.server.key`),
