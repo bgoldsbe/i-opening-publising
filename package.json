@@ -7,7 +7,7 @@
   },
   "description": "",
   "scripts": {
-    "start": "./app/start-dev-server.sh",
+    "start": "./app/start-server.sh",
     "compile": "./app/compile.sh",
     "heroku-postbuild": "./app/install-webpack.sh && ./app/compile.sh"
   },
