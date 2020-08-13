@@ -10,8 +10,14 @@ const startServer = (server, port, message) => {
 };
 
 const startHttpAppServer = () => {
-  const port = process.env.HTTP_PORT || 9876;
+  const port = process.env.PORT || 9876;
   const server = http.createServer(app);
+  
+  console.log("##########################");
+  console.log(process.env);
+  console.log(process.env.HTTP_PORT);
+  console.log(process.env.PORT);
+  console.log("##########################");
 
   startServer(server, port, `Listening (http) on ${port}\n`);
 };
