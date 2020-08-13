@@ -1,11 +1,11 @@
 import React from 'react';
 import classNames from 'classnames';
-import "./MenuIcon.scss";
+import styles from "./MenuIcon.module.scss";
 
 const MenuIcon = ({onClick, open}) => (
   <div
     onClick={onClick}
-    styleName={classNames("root", {open})}
+    className={classNames(styles.root, {[styles.open]: open})}
   >
     <span/>
     <span/>

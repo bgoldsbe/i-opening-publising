@@ -3,7 +3,7 @@
 export NODE_ENV=${NODE_ENV:-development}
 
 webpack \
-  --config ./config/webpack.config.js \
+  --config ./webpack.config.js \
   --progress \
   --colors \
   --watch \

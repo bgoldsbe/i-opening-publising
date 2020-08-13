@@ -4,14 +4,13 @@ import {Link, withRouter} from 'react-router-dom';
 import classNames from 'classnames';
 import Navigation from 'components/Navigation';
 import MenuIcon from 'components/MenuIcon';
-import "./Header.scss";
+import styles from "./Header.module.scss";
 
 const Header = ({pushed, toggleNav, pathname}) => (
   <Media query={{maxWidth: 768}}>
     {isMobile =>
-      <header styleName={classNames('root', pushed)}>
-        <Link styleName='logo' to='/'>
-          <div styleName='logo-image'/>
+      <header className={classNames(styles.root, {[styles.pushed]: pushed})}>
+        <Link className={styles.logo} to='/'>
           <h1>{'I Opening Publishing'}</h1>
         </Link>
         {isMobile &&

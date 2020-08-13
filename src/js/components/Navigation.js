@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink, withRouter} from 'react-router-dom'
 import classNames from 'classnames';
-import "./Navigation.scss";
+import styles from "./Navigation.module.scss";
 
 class Navigation extends React.PureComponent {
   state = {
@@ -34,15 +34,15 @@ class Navigation extends React.PureComponent {
     const {location: {pathname}} = this.props;
 
     return (
-      <nav styleName={
-				classNames("root", {show})
+      <nav className={
+				classNames(styles.root, {[styles.show]: show})
 			}>
-        <div styleName={
-					classNames("group", {activeGroup: pathname.includes('/')})
+        <div className={
+					classNames(styles.group, {[styles.activeGroup]: pathname.includes('/')})
 				}>
           <NavLink
-            styleName={
-							classNames("item", {activeItem: pathname.includes('/about')})
+            className={
+							classNames(styles.item, {[styles.activeItem]: pathname.includes('/about')})
 						}
             to='/'
           >

@@ -1,45 +1,45 @@
-@import 'css/variables';
+@import "css/variables";
 
 .root {
   height: 100%;
   position: relative;
+  background-image: url("/images/image-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .view {
-  background-color: $primary-background-color;
   height: 100%;
   left: 0;
   position: relative;
   transition: left 150ms ease-in-out;
   position: relative;
-  padding-top: $gallery-height-base + $header-height-base + px;
-
-  &.standalone {
-    padding-top: 0;
-  }
+  padding-top: $header-height-base + px;
 
   &.pushed {
     left: -($nav-width);
   }
 }
 
-.content-wrapper {
+.contentWrapper {
   width: 100%;
   min-height: 100%;
-  background: $primary-background-color;
   position: relative;
 }
 
 .content {
   min-height: 100%;
   max-width: $content-max;
+  min-height: 478px;
   margin: 0 auto;
   padding: 1em 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.5);
 
   h1 {
-    position: absolute;
-    top: -52px;
-    left: 10px;
     font-size: 4em;
     text-transform: uppercase;
 		color: $color-white;
@@ -72,12 +72,8 @@
     left: 0;
     transition: none;
     height: auto;
-    padding-top: $gallery-height-desktop-base + $header-height-base + px;
+    padding-top: $header-height-base + px;
 
-    &.standalone {
-      padding-top: 0;
-    }
-    
     &.pushed {
       left: 0;
     }

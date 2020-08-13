@@ -1,39 +1,9 @@
-$content-width-base: 769;
-$content-width: $content-width-base + px;
-$content-max: 1201px;
-$content-small: 375px;
-$nav-width: 200px;
-$header-height-base: 70;
-$header-height: $header-height-base + px;
-$footer-height: 70px;
-
-$color-black: #000;
-$color-white: #fff;
-$color-light-grey: #ddd;
-$color-lightest-grey: #fbfbfa;
-$color-grey: #ccc;
-$color-dark-grey: #222; 
-$color-darkest-grey: #111; 
-$color-orange: #d07836;
-$color-pink: #ee5f53;
-$color-blue: #29bfd8;
-$color-green: #89c249;
-
-$primary-background-color: $color-white;
-$primary-font-color: $color-darkest-grey;
-$footer-background-color: $color-lightest-grey;
-
-$navigation-background-color: $color-black;
-$navigation-secondary-background-color: $color-black;
-$navigation-active-group-color: $color-darkest-grey;
-$navigation-active-item-color: $color-dark-grey;
-$navigation-active-color: $color-blue;
-$no-content-background-color: $color-light-grey;
+@import "css/variables";
 
 .root {
   align-items: center;
   justify-content: space-between;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.5);
   box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
   display: flex;
   height: $header-height;
@@ -51,7 +21,7 @@ $no-content-background-color: $color-light-grey;
 }
 
 .logo {
-  color: #000;
+  color: #fff;
   text-decoration: none;
   height: $header-height;
   display: flex;
@@ -60,7 +30,7 @@ $no-content-background-color: $color-light-grey;
   position: relative;
   z-index: 10;
 
-  .logo-image {
+  .logoImage {
     height: 70px;
     width: 113px;
     flex-shrink: 0;
@@ -75,8 +45,8 @@ $no-content-background-color: $color-light-grey;
     align-items: center;
     font-size: 1.5em;
     text-transform: uppercase;
-    -webkit-text-stroke: 2px $color-green;
-    text-stroke: 2px $color-green;
+    -webkit-text-stroke: 2px $color-pink;
+    text-stroke: 2px $color-pink;
   }
 }
 

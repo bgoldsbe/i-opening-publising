@@ -5,7 +5,9 @@ import classNames from 'classnames';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Navigation from 'components/Navigation';
-import "./App.scss";
+import Home from 'components/Home';
+import NotFound from 'components/NotFound';
+import styles from "./App.module.scss";
 
 class App extends React.Component {
   state = {
@@ -54,10 +56,9 @@ class App extends React.Component {
   render() {
     const {location} = this.props;
     const {navOpen} = this.state;
-    const standaloneView = false;
 
     return (
-      <div styleName="root">
+      <div className={styles.root}>
         <Header
           pathname={location.pathname}
           pushed={navOpen}
@@ -70,23 +71,17 @@ class App extends React.Component {
             />
           )}
         </Media>
-        <div styleName={classNames("view", {
-          pushed: navOpen,
-          standalone: standaloneView
+        <div className={classNames(styles.view, {
+          [styles.pushed]: navOpen
         })}>
-          {standaloneView
-            ? <div styleName="content-wrapper"></div>
-            : <div styleName="content-wrapper">
-                <Notifications/>
-                <div styleName="content">
-                  <Switch>
-                    <Route exact path='/' component={Home}/>
-                    <Route component={NotFound}/>
-                  </Switch>
-                </div>
-              </div>
-          }
-          <Footer/>
+          <div className={styles.contentWrapper}>
+            <div className={styles.content}>
+              <Switch>
+                <Route exact path='/' component={Home}/>
+                <Route component={NotFound}/>
+              </Switch>
+            </div>
+          </div>
         </div>
       </div>
     );
