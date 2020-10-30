@@ -42,11 +42,23 @@ class Navigation extends React.PureComponent {
 				}>
           <NavLink
             className={
-							classNames(styles.item, {[styles.activeItem]: pathname.includes('/about')})
-						}
+              classNames(styles.item, {[styles.activeItem]: pathname === "/"
+              })}
             to='/'
           >
             {'Home'}
+          </NavLink>
+        </div>
+        <div className={
+					classNames(styles.group, {[styles.activeGroup]: pathname.includes('/about')})
+				}>
+          <NavLink
+            className={
+							classNames(styles.item, {[styles.activeItem]: pathname.includes('/about')})
+						}
+            to='/about'
+          >
+            {'About'}
           </NavLink>
         </div>
       </nav>

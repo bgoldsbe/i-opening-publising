@@ -7,10 +7,13 @@
   
   .buttons {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
   
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+
   .button {
     outline: none;
     border: 0;
@@ -18,11 +21,8 @@
     background: #000000;
     color: #ffffff;
     text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 1.6em;
-    margin: 1em;
+    margin: 0 1em;
   }
 
   .title {
